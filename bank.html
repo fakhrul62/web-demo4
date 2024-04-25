@@ -22,19 +22,19 @@
             <div class="card bg-gray-700 shadow-xl">
                 <div class="card-body">
                     <h2 class="text-2xl">Deposit</h2>
-                    <p class="text-5xl">$55</p>
+                    <p class="text-5xl">$ <span id="deposit-total"></span></p>
                 </div>
             </div>
             <div class="card bg-gray-700 shadow-xl">
                 <div class="card-body">
-                    <h2 class="text-2xl">Deposit</h2>
-                    <p class="text-5xl">$55</p>
+                    <h2 class="text-2xl">Withdraw</h2>
+                    <p class="text-5xl">$ <span id="withdraw-total"></span></p>
                 </div>
             </div>
             <div class="card bg-gray-700 shadow-xl">
                 <div class="card-body">
-                    <h2 class="text-2xl">Deposit</h2>
-                    <p class="text-5xl">$55</p>
+                    <h2 class="text-2xl">Balance</h2>
+                    <p class="text-5xl">$ <span id="balance-total"></span></p>
                 </div>
             </div>
         </div>
@@ -46,7 +46,7 @@
                         $
                         <input type="text" class="grow" id="user-deposit" placeholder="amount you want to deposit" />
                       </label>
-                      <button class="btn btn-active w-52">Deposit</button>
+                      <button class="btn btn-active w-52" id="btn-deposit">Deposit</button>
                 </div>
             </div>
             <div class="card  bg-gray-700 shadow-xl">
@@ -54,15 +54,15 @@
                     <h2 class="text-3xl">Please Withdraw</h2>
                     <label class="input input-bordered flex items-center gap-2 my-5">
                         $
-                        <input type="text" class="grow" id="user-deposit" placeholder="amount you want to withdraw" />
+                        <input type="text" class="grow" id="user-withdraw" placeholder="amount you want to withdraw" />
                       </label>
-                      <button class="btn btn-active w-52">Withdraw</button>
+                      <button class="btn btn-active w-52" id="btn-withdraw">Withdraw</button>
                 </div>
             </div>
         </div>
     </main>
 
-
+<script src="js/deposit.js"></script>
 </body>
 
 </html>
