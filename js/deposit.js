@@ -1,8 +1,10 @@
 document.getElementById('btn-deposit').addEventListener('click', function(){
-// getting deposit value and coverting it to string
+    // getting deposit value and coverting it to string
     const depositValue = document.getElementById('user-deposit');
     const newDepositString = depositValue.value;
     const newDeposit = parseFloat(newDepositString);
+if(!isNaN(newDeposit)){
+    
 
 // adding it to the previous deposit value
     const depositNow = document.getElementById('deposit-total');
@@ -22,4 +24,8 @@ document.getElementById('btn-deposit').addEventListener('click', function(){
 
 
     depositValue.value = '';
+}
+else{
+    alert("give me number idiiot");
+}
 })

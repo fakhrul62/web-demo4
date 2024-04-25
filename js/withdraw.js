@@ -1,32 +1,40 @@
-document.getElementById('btn-withdraw').addEventListener('click', function(){
+document.getElementById('btn-withdraw').addEventListener('click', function () {
     const withdrawValue = document.getElementById('user-withdraw');
     const newWithdrawString = withdrawValue.value;
     const newWithdraw = parseFloat(newWithdrawString);
+    if (!isNaN(newWithdraw)) {
+
+        const withdrawNow = document.getElementById('withdraw-total');
+        const prevWithdrawTotalString = withdrawNow.innerText;
+        const prevWithdrawTotal = parseFloat(prevWithdrawTotalString);
 
 
-    const withdrawNow = document.getElementById('withdraw-total');
-    const prevWithdrawTotalString = withdrawNow.innerText;
-    const prevWithdrawTotal = parseFloat(prevWithdrawTotalString);
-    
-  
-    const balanceValue = document.getElementById('balance-total');
-    const prevBalanceTotalString= balanceValue.innerText;
-    const prevBalanceTotal = parseFloat(prevBalanceTotalString);
- 
+        const balanceValue = document.getElementById('balance-total');
+        const prevBalanceTotalString = balanceValue.innerText;
+        const prevBalanceTotal = parseFloat(prevBalanceTotalString);
 
-    const balanceNow =  prevBalanceTotal - newWithdraw;
-    
 
-    withdrawValue.value = '';
-    
-    if(newWithdraw>balanceNow){
-        alert("No money No honey");
-        return;
+        const balanceNow = prevBalanceTotal - newWithdraw;
+
+
+        withdrawValue.value = '';
+
+        if (newWithdraw > balanceNow) {
+            alert("No money No honey");
+            return;
+        }
+        const currentWithdrawTotal = prevWithdrawTotal + newWithdraw;
+        withdrawNow.innerText = currentWithdrawTotal;
+
+
+        balanceValue.innerText = balanceNow;
     }
-    const currentWithdrawTotal = prevWithdrawTotal+newWithdraw;
-    withdrawNow.innerText = currentWithdrawTotal;
+    else{
+        alert("give me number idiiot");
+    }
 
-  
-    balanceValue.innerText = balanceNow;
-    
+})
+
+document.getElementById('btn-logout').addEventListener('click', function(){
+    window.location.href = 'index.html';
 })
